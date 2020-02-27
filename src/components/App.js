@@ -7,13 +7,19 @@ import TestDisplay from './TestDisplay';
 function App() {
   
   const[counter, setCounter] = useState(0) // use of JS array destructuring functionality
-  const incrementCounter = () => setCounter(counter + 1);
+  const incrementCounter = (incValue) => setCounter(counter + incValue);
 
   return (
     <div className="App">
       <header className="App-header">
-        <TestButton onClickFunction={incrementCounter}/>
-        <TestDisplay message={counter}/>        
+        <div>
+          <TestButton onClickFunction={incrementCounter} increment={1}/>
+          <TestButton onClickFunction={incrementCounter} increment={5}/>
+          <TestButton onClickFunction={incrementCounter} increment={10}/>
+          <TestButton onClickFunction={incrementCounter} increment={100}/>
+          <TestDisplay message={counter}/>
+        </div>
+
         
         <img src={logo} className="App-logo" alt="logo" />
         <p>

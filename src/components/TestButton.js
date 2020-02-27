@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function TestButton(props) {
-    
+    const handleClick = () => {
+        props.onClickFunction(props.increment);
+    }
     return (
-        <button onClick={props.onClickFunction}>
-            +1
+        <button onClick={handleClick}>
+            +{props.increment}
         </button>
     );
 }
