@@ -9,6 +9,8 @@ function App() {
   const[counter, setCounter] = useState(0) // use of JS array destructuring functionality
   const incrementCounter = (incValue) => setCounter(counter + incValue);
 
+  const handleBtnResetOnClick = () => setCounter(0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +19,13 @@ function App() {
           <TestButton onClickFunction={incrementCounter} increment={5}/>
           <TestButton onClickFunction={incrementCounter} increment={10}/>
           <TestButton onClickFunction={incrementCounter} increment={100}/>
+          <button onClick={handleBtnResetOnClick}>Reset</button>
           <TestDisplay message={counter}/>
         </div>
 
+        <div>
+          
+        </div>
         
         <img src={logo} className="App-logo" alt="logo" />
         <p>
